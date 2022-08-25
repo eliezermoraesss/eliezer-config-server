@@ -4,6 +4,16 @@ server:
 spring:
   application:
     name: eliezer-config-server
-  profiles:
-    active:
-    - native
+  #profiles:
+    #active:
+    #- native [PARA RODAR LOCALMENTE]
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/eliezermoraesss/eliezer-microsservices-config-server
+          #username: username
+          #password: password
+          default-label: main
+          search-paths:
+          - 'greeting-service*'
